@@ -1,49 +1,29 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[4]:
-
 
 pip install pandas_datareader
 
-
-# In[5]:
 
 
 import pandas_datareader.data as dtr
 
 
-# In[26]:
 
 
 tickers = ['fb','aapl','amzn','nflx','goog','^gspc']
 
 
-# In[27]:
-
-
 D = dtr.DataReader(tickers,"yahoo")
-
-
-# In[8]:
 
 
 type(D)
 
 
-# In[28]:
-
 
 D.tail()
 
 
-# In[29]:
-
 
 P = D['Adj Close']
 
-
-# In[30]:
 
 
 P.tail()
@@ -91,37 +71,25 @@ R2.columns
 R2.rename(columns = {'^gspc':'SnP'},inplace=True)
 
 
-# In[41]:
-
 
 R2.tail()
 
 
-# In[44]:
 
 
 results = sm.ols(formula = 'fb ~ SnP',data = R2).fit()
 
 
-# In[46]:
-
-
 results.params
-
-
-# In[51]:
 
 
 mystocks = R.columns[:5]
 
 
-# In[52]:
-
 
 mystocks
 
 
-# In[53]:
 
 
 type(mystocks)
@@ -164,10 +132,3 @@ notional * betavec
 
 
 sum(notional * betavec)
-
-
-# In[ ]:
-
-
-
-
