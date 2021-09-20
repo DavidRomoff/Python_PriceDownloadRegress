@@ -1,9 +1,12 @@
 
+pip install pandas
 pip install pandas_datareader
 pip install statsmodels
 pip install numpy
 
+import numpy as np
 import pandas_datareader.data as dtr
+import statsmodels.formula.api as sm
 
 tickers = ['fb','aapl','amzn','nflx','goog','^gspc']
 D = dtr.DataReader(tickers,"yahoo")
@@ -41,7 +44,6 @@ for mystock in mystocks:
 
 betalist
 
-import numpy as np
 betavec = np.array(betalist)
 notional = 100
 notional * betavec
