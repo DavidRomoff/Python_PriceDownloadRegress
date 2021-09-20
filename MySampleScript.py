@@ -1,5 +1,7 @@
 
 pip install pandas_datareader
+pip install statsmodels
+pip install numpy
 
 import pandas_datareader.data as dtr
 
